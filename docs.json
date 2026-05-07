@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
+  "theme": "mint",
   "name": "Livepeer Docs",
   "favicon": "/favicon.svg",
   "logo": {
@@ -21,9 +21,9 @@
     "css": ["/styles/livepeer-colors.css"]
   },
   "navigation": {
-    "anchors": [
+    "dropdowns": [
       {
-        "anchor": "Builders",
+        "dropdown": "Builders",
         "icon": "code",
         "groups": [
           {
@@ -121,7 +121,7 @@
         ]
       },
       {
-        "anchor": "Network",
+        "dropdown": "Network",
         "icon": "globe",
         "groups": [
           {
