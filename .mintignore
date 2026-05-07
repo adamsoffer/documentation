@@ -5,8 +5,3 @@
 # Draft content
 drafts/
 *.draft.mdx
-
-# Design system bundle and font assets — referenced by URL, not crawled as content.
-design-system/
-fonts/
-AGENTS.md
