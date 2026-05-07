@@ -21,9 +21,10 @@
     "css": ["/styles/livepeer-colors.css"]
   },
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Builders",
+        "anchor": "Builders",
+        "icon": "code",
         "groups": [
           {
             "group": "Get started",
@@ -120,7 +121,8 @@
         ]
       },
       {
-        "tab": "Network",
+        "anchor": "Network",
+        "icon": "globe",
         "groups": [
           {
             "group": "Overview",
