@@ -1,0 +1,168 @@
+/* Livepeer Docs — supplemental stylesheet
+ *
+ * Scoped to:
+ *   1. Color tokens from the Livepeer Design System (everything beyond what
+ *      docs.json's `colors` field can express).
+ *   2. Geist Sans + Geist Mono font wiring.
+ *   3. Route-scoped product CTA upgrade on /network paths.
+ *
+ * Aspen owns typography sizing/tracking, spacing, radii, and shadows. We
+ * intentionally do not adopt those tokens from the bundle.
+ */
+
+/* ─── Geist Sans (self-hosted from /fonts/) ─────────────────────────────── */
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Thin.otf")       format("opentype"); font-weight: 100; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-ExtraLight.otf") format("opentype"); font-weight: 200; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Light.otf")      format("opentype"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Regular.otf")    format("opentype"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Medium.otf")     format("opentype"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-SemiBold.otf")   format("opentype"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Bold.otf")       format("opentype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-ExtraBold.otf")  format("opentype"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Geist"; src: url("/fonts/Geist-Black.otf")      format("opentype"); font-weight: 900; font-style: normal; font-display: swap; }
+
+/* Geist Mono — not in the DS bundle. Pulled from Google Fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap");
+
+html, body {
+  font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+code, kbd, pre, samp, .font-mono, [class*="code"] {
+  font-family: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* ─── Color tokens (dark default) ───────────────────────────────────────── */
+:root {
+  --green:        #18794E;
+  --green-light:  #1E9960;
+  --green-dark:   #115C3B;
+  --green-bright: #40BF86;
+  --green-subtle: rgba(24, 121, 78, 0.15);
+
+  --blue:         #146A8F;
+  --blue-light:   #1380AE;
+  --blue-bright:  #25ABD0;
+  --blue-dark:    #145571;
+  --blue-subtle:  rgba(20, 106, 143, 0.15);
+
+  --purple:        #7C3AED;
+  --purple-light:  #8B5CF6;
+  --purple-bright: #A78BFA;
+  --purple-dark:   #5B21B6;
+
+  --warm:         #F59E0B;
+  --warm-bright:  #FBBF24;
+  --warm-subtle:  rgba(245, 158, 11, 0.12);
+  --red-400:      #F87171;
+
+  --shell:        #070707;
+  --bg-1:         #181818;
+  --bg-2:         #1A1A1A;
+  --bg-card:      #1E1E1E;
+  --bg-raised:    #242424;
+  --border:       #2A2A2A;
+
+  --hairline:     rgba(255, 255, 255, 0.06);
+  --subtle-line:  rgba(255, 255, 255, 0.10);
+  --strong-line:  rgba(255, 255, 255, 0.15);
+
+  --fg:           rgba(255, 255, 255, 1.00);
+  --fg-strong:    rgba(255, 255, 255, 0.70);
+  --fg-muted:     rgba(255, 255, 255, 0.60);
+  --fg-faint:     rgba(255, 255, 255, 0.50);
+  --fg-label:     rgba(255, 255, 255, 0.40);
+  --fg-disabled:  rgba(255, 255, 255, 0.25);
+
+  --zebra:        rgba(255, 255, 255, 0.025);
+  --hover:        rgba(255, 255, 255, 0.04);
+  --tint:         rgba(255, 255, 255, 0.06);
+  --active:       rgba(255, 255, 255, 0.07);
+  --pop:          rgba(255, 255, 255, 0.10);
+  --overlay:      rgba(0, 0, 0, 0.50);
+
+  --black-100: #121212;
+  --black-90:  #2F2F2F;
+  --black-80:  #464646;
+  --black-70:  #5D5D5D;
+  --black-60:  #747474;
+  --black-50:  #8B8B8B;
+  --black-40:  #A3A3A3;
+  --black-30:  #BABABA;
+  --black-20:  #D1D1D1;
+  --black-10:  #E8E8E8;
+
+  --cta:        var(--green);
+  --cta-hover:  var(--green-light);
+  --cta-active: var(--green-dark);
+  --cta-fg:     #FFFFFF;
+}
+
+/* ─── Light theme override ──────────────────────────────────────────────── */
+[data-theme="light"], html[data-theme="light"], body[data-theme="light"] {
+  --shell:       #F4F4F5;
+  --bg-1:        #FFFFFF;
+  --bg-2:        #F4F4F5;
+  --bg-card:     #F4F4F5;
+  --bg-raised:   #FFFFFF;
+  --border:      #E4E4E7;
+
+  --hairline:    rgba(24, 24, 27, 0.10);
+  --subtle-line: rgba(24, 24, 27, 0.14);
+  --strong-line: rgba(24, 24, 27, 0.20);
+
+  --fg:          rgba(24, 24, 27, 1);
+  --fg-strong:   rgba(24, 24, 27, 0.85);
+  --fg-muted:    rgba(24, 24, 27, 0.70);
+  --fg-faint:    rgba(24, 24, 27, 0.50);
+  --fg-label:    rgba(24, 24, 27, 0.40);
+  --fg-disabled: rgba(24, 24, 27, 0.25);
+
+  --zebra:  rgba(24, 24, 27, 0.025);
+  --hover:  rgba(24, 24, 27, 0.05);
+  --tint:   rgba(24, 24, 27, 0.06);
+  --active: rgba(24, 24, 27, 0.08);
+  --pop:    rgba(24, 24, 27, 0.10);
+  --overlay:rgba(24, 24, 27, 0.32);
+
+  --green-bright: #1E9960;
+  --blue-bright:  #0E7490;
+}
+
+/* ─── Route-scoped product CTA ──────────────────────────────────────────── *
+ * On /network paths, hide the global "Open Dashboard" navbar.primary button
+ * and upgrade the "Open Explorer ↗" navbar.links entry to a filled button.
+ *
+ * Selector targets are best-guesses against Aspen's rendered DOM. If Aspen
+ * exposes a different path-data attribute, replace [data-pathname^="/network"]
+ * with the actual one. If no path attribute is exposed at all, the rules are
+ * inert (acceptable fallback per the plan: both CTAs visible globally).
+ */
+body[data-pathname^="/network"] .navbar-primary,
+[data-pathname^="/network"] .navbar-primary,
+[data-path^="/network"]      .navbar-primary {
+  display: none !important;
+}
+
+body[data-pathname^="/network"] a[href*="explorer.livepeer.org"],
+[data-pathname^="/network"]    a[href*="explorer.livepeer.org"],
+[data-path^="/network"]        a[href*="explorer.livepeer.org"] {
+  background-color: var(--cta);
+  color: var(--cta-fg) !important;
+  padding: 0.5rem 0.875rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body[data-pathname^="/network"] a[href*="explorer.livepeer.org"]:hover,
+[data-pathname^="/network"]    a[href*="explorer.livepeer.org"]:hover,
+[data-path^="/network"]        a[href*="explorer.livepeer.org"]:hover {
+  background-color: var(--cta-hover);
+}
+
+/* On non-/network paths, hide the Open Explorer link so only the Dashboard
+ * button shows. */
+body:not([data-pathname^="/network"]):not([data-path^="/network"]) a[href*="explorer.livepeer.org"] {
+  display: none;
+}

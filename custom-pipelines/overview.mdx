@@ -1,0 +1,34 @@
+---
+title: "Custom pipelines"
+description: "Publish your own pipelines for orchestrators on the Livepeer network to run."
+---
+
+<Note>
+  This page is a placeholder. It will eventually orient builders to authoring custom pipelines — sometimes referred to as BYOC (Bring Your Own Capability) — packaging them in containers, and publishing them so orchestrators can run them.
+</Note>
+
+<CardGroup cols={2}>
+  <Card title="Runner SDK" href="/custom-pipelines/runner-sdk/pipeline-base">
+    The SDK orchestrators load your pipeline through — base classes, lifecycle, hooks.
+  </Card>
+  <Card title="Packaging" href="/custom-pipelines/packaging">
+    How to build your pipeline container for the network.
+  </Card>
+  <Card title="Publishing" href="/custom-pipelines/publishing">
+    Push your pipeline to the network and register its capability.
+  </Card>
+  <Card title="Examples" href="/custom-pipelines/examples">
+    Reference pipelines — sentiment, llm, live_grayscale, live_transcribe, more.
+  </Card>
+</CardGroup>
+
+## How orchestrators run your pipeline
+
+<CardGroup cols={2}>
+  <Card title="How orchestrators advertise and run custom pipelines" href="/network/learn/custom-pipelines-and-capabilities">
+    Network-side concept: capability advertisement, image pulls, run dispatch.
+  </Card>
+  <Card title="Network-side: pulling and running custom pipeline containers" href="/network/orchestrators/custom-pipelines">
+    Operator-facing guide for orchestrators running BYOC pipelines.
+  </Card>
+</CardGroup>

@@ -1,126 +1,219 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
+  "theme": "aspen",
+  "name": "Livepeer Docs",
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "/"
+  },
+  "colors": {
+    "primary": "#18794E",
+    "light": "#40BF86",
+    "dark": "#115C3B",
+    "background": {
+      "light": "#FAFAFA",
+      "dark": "#121212"
+    }
+  },
+  "fonts": {
+    "heading": { "family": "Geist", "weight": 600 },
+    "body": { "family": "Geist", "weight": 400 }
+  },
+  "styling": {
+    "css": ["/styles/livepeer-colors.css"]
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Builders",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Get started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "quickstart/index",
+              "quickstart/from-cursor",
+              "quickstart/from-claude",
+              "quickstart/from-terminal"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Learn",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "learn/index",
+              "learn/pipelines",
+              "learn/runs",
+              "learn/usage-and-billing",
+              "learn/api-keys",
+              "learn/latency-and-regions",
+              "learn/model-capabilities"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Pipelines",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
+              "pipelines/index",
+              "pipelines/real-time-video",
+              "pipelines/image-generation",
+              "pipelines/transcoding"
             ]
           },
           {
-            "group": "Agent ready",
+            "group": "Custom pipelines",
             "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "custom-pipelines/overview",
+              {
+                "group": "Runner SDK",
+                "pages": [
+                  "custom-pipelines/runner-sdk/pipeline-base",
+                  "custom-pipelines/runner-sdk/live-pipeline-base",
+                  "custom-pipelines/runner-sdk/lifecycle-and-hooks",
+                  "custom-pipelines/runner-sdk/side-channels",
+                  "custom-pipelines/runner-sdk/heartbeat"
+                ]
+              },
+              "custom-pipelines/packaging",
+              "custom-pipelines/publishing",
+              "custom-pipelines/testing-locally",
+              "custom-pipelines/examples"
             ]
+          },
+          {
+            "group": "API reference",
+            "pages": [
+              "api-reference/index",
+              "api-reference/authentication",
+              "api-reference/pipelines",
+              "api-reference/runs",
+              "api-reference/errors"
+            ]
+          },
+          {
+            "group": "SDKs",
+            "pages": [
+              "sdks/index",
+              "sdks/node",
+              "sdks/python",
+              "sdks/openapi"
+            ]
+          },
+          {
+            "group": "MCP",
+            "pages": [
+              "mcp/index",
+              "mcp/cursor",
+              "mcp/claude-code",
+              "mcp/custom-clients"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/index",
+              "guides/stream-from-webcam",
+              "guides/deploy-a-custom-model",
+              "guides/handle-rate-limits"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": ["troubleshooting"]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Network",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Overview",
+            "pages": ["network/index"]
+          },
+          {
+            "group": "Learn",
             "pages": [
-              "api-reference/introduction"
+              "network/learn/index",
+              "network/learn/how-the-network-works",
+              "network/learn/rounds-and-rewards",
+              "network/learn/ticket-redemption",
+              "network/learn/gateways-and-routing",
+              "network/learn/custom-pipelines-and-capabilities",
+              "network/learn/bonding-and-staking",
+              "network/learn/economics",
+              "network/learn/governance-overview"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Orchestrators",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "network/orchestrators/index",
+              "network/orchestrators/quickstart",
+              "network/orchestrators/hardware",
+              "network/orchestrators/capabilities",
+              "network/orchestrators/custom-pipelines",
+              "network/orchestrators/troubleshooting"
+            ]
+          },
+          {
+            "group": "Gateways",
+            "pages": [
+              "network/gateways/index",
+              "network/gateways/quickstart",
+              "network/gateways/infrastructure",
+              "network/gateways/routing-configuration",
+              "network/gateways/payment-handling",
+              "network/gateways/troubleshooting"
+            ]
+          },
+          {
+            "group": "Delegators",
+            "pages": [
+              "network/delegators/index",
+              "network/delegators/staking",
+              "network/delegators/choosing-an-orchestrator",
+              "network/delegators/rewards-and-fees"
+            ]
+          },
+          {
+            "group": "Governance",
+            "pages": [
+              "network/governance/index",
+              "network/governance/lip-process",
+              "network/governance/treasury",
+              "network/governance/spe"
+            ]
+          },
+          {
+            "group": "Protocol reference",
+            "pages": [
+              "network/protocol-reference/index",
+              "network/protocol-reference/smart-contracts",
+              "network/protocol-reference/round-mechanics",
+              "network/protocol-reference/ticket-mechanics"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Open Explorer ↗",
+        "href": "https://explorer.livepeer.org"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Dashboard",
+      "href": "https://livepeer.org/dashboard"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/livepeer",
+      "github": "https://github.com/livepeer"
     }
   }
 }
