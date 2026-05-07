@@ -11,11 +11,7 @@
   "colors": {
     "primary": "#18794E",
     "light": "#40BF86",
-    "dark": "#115C3B",
-    "background": {
-      "light": "#FAFAFA",
-      "dark": "#121212"
-    }
+    "dark": "#115C3B"
   },
   "fonts": {
     "heading": { "family": "Geist", "weight": 600 },
