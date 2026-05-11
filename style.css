@@ -1,0 +1,108 @@
+/* Livepeer Docs — supplemental color overrides for Mintlify (Luma theme).
+ * Color tokens only. Typography, spacing, radii, and motion come from Luma.
+ * Source: design-system/colors_and_type.css (Livepeer Design System).
+ */
+
+:root {
+  --lp-green:        #18794E;
+  --lp-green-light:  #1E9960;
+  --lp-green-dark:   #115C3B;
+  --lp-green-bright: #40BF86;
+
+  --lp-warm:         #F59E0B;
+  --lp-red-400:      #F87171;
+
+  --lp-bg-light:        #FAFAFA;
+  --lp-bg-light-1:      #FFFFFF;
+  --lp-bg-light-card:   #F4F4F5;
+  --lp-shell-light:     #F4F4F5;
+  --lp-border-light:    #E4E4E7;
+
+  --lp-bg-dark:        #121212;
+  --lp-bg-dark-1:      #181818;
+  --lp-bg-dark-card:   #1E1E1E;
+  --lp-shell-dark:     #070707;
+  --lp-border-dark:    #2A2A2A;
+}
+
+/* ─── Per-surface CTA visibility ────────────────────────────────────────────
+ * BOTH navbar CTAs are hidden by default to prevent a flash-of-wrong-button
+ * during initial paint (Mintlify renders both anchors at default display
+ * before nav-cta.js can set body[data-surface]). nav-cta.js sets the
+ * attribute as soon as the script loads, and the rules below reveal the
+ * matching CTA. The wrong-surface CTA stays display:none.
+ *
+ * URLs are unique across the navbar, so href substring matching is
+ * unambiguous (no collision with logo or product-switcher links).
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+a[href*="explorer.livepeer.org"],
+a[href*="livepeer.org/dashboard"] {
+  display: none !important;
+}
+
+body[data-surface="developers"] a[href*="livepeer.org/dashboard"] {
+  display: inline-flex !important;
+}
+body[data-surface="network"] a[href*="explorer.livepeer.org"] {
+  display: inline-flex !important;
+}
+
+/* ─── Match both navbar CTAs to the livepeer.org website nav button ────────
+ * Dark mode: white pill, black text (matches the marketing site's nav CTA).
+ * Light mode: inverse — dark pill, white text (matches the Livepeer design
+ * system's --cta recipe for light surfaces, the Vercel/Linear/Stripe pattern).
+ * Both Dashboard and Explorer buttons use identical styling so the affordance
+ * stays consistent across surfaces; the per-surface visibility hack above
+ * decides which one renders.
+ * External-link arrow on both via ::after pseudo-element.
+ * ─────────────────────────────────────────────────────────────────────────── */
+
+a[href*="explorer.livepeer.org"],
+a[href*="livepeer.org/dashboard"] {
+  background-color: #18181B !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  height: 34px !important;
+  padding: 0 16px !important;
+  border-radius: 9999px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  align-items: center !important;
+  gap: 4px !important;
+  white-space: nowrap !important;
+  transition: opacity 150ms ease, background-color 150ms ease !important;
+}
+
+a[href*="explorer.livepeer.org"]::after,
+a[href*="livepeer.org/dashboard"]::after {
+  content: "↗";
+  font-size: 14px;
+  line-height: 1;
+  display: inline-block;
+}
+
+a[href*="explorer.livepeer.org"]:hover,
+a[href*="livepeer.org/dashboard"]:hover {
+  opacity: 0.85 !important;
+  background-color: #18181B !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode: white pill with near-black text (matches the website nav) */
+html.dark a[href*="explorer.livepeer.org"],
+html.dark a[href*="livepeer.org/dashboard"],
+.dark a[href*="explorer.livepeer.org"],
+.dark a[href*="livepeer.org/dashboard"] {
+  background-color: #ffffff !important;
+  color: #0A0A0A !important;
+}
+html.dark a[href*="explorer.livepeer.org"]:hover,
+html.dark a[href*="livepeer.org/dashboard"]:hover,
+.dark a[href*="explorer.livepeer.org"]:hover,
+.dark a[href*="livepeer.org/dashboard"]:hover {
+  background-color: #ffffff !important;
+  color: #0A0A0A !important;
+  opacity: 0.85 !important;
+}

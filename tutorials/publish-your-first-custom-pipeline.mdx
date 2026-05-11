@@ -1,0 +1,23 @@
+---
+title: "Publish your first custom pipeline"
+description: "Hand-held happy-path walkthrough: implement a custom pipeline with the Runner SDK, package it, and register it as a capability so the network picks it up."
+---
+
+<Note>
+  This page is a placeholder tutorial. It will be a hand-held happy-path walkthrough covering the full publish flow: write a pipeline with the Runner SDK, package it, push it to a registry, register the capability, and verify the network is picking it up. (Custom pipelines are historically referred to as BYOC.)
+</Note>
+
+<Steps>
+  <Step title="Implement your pipeline with the Runner SDK">
+    Subclass `PipelineBase` (batch) or `LivePipelineBase` (live) and implement the lifecycle hooks.
+  </Step>
+  <Step title="Package the pipeline as a container">
+    Build a container image and push it to a registry GPU providers can pull from.
+  </Step>
+  <Step title="Register the capability">
+    Submit the capability manifest so GPU providers on the network can pick it up.
+  </Step>
+  <Step title="Verify discovery">
+    Use the dashboard to confirm GPU providers are advertising your capability and that test calls succeed.
+  </Step>
+</Steps>

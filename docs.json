@@ -1,126 +1,343 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mintlify Starter Kit",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
+  "theme": "luma",
+  "name": "Livepeer",
+  "description": "Documentation for Livepeer — the open network for GPU-powered video.",
   "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "colors": {
+    "primary": "#18794E",
+    "light": "#40BF86",
+    "dark": "#115C3B"
+  },
+  "background": {
+    "decoration": "gradient",
+    "color": { "light": "#FAFAFA", "dark": "#121212" }
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Open Dashboard",
+      "href": "https://livepeer.org/dashboard"
+    },
+    "links": [
+      { "label": "Open Explorer", "href": "https://explorer.livepeer.org" }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/livepeer",
+      "github": "https://github.com/livepeer",
+      "discord": "https://discord.gg/livepeer"
+    }
+  },
   "navigation": {
-    "tabs": [
+    "products": [
       {
-        "tab": "Guides",
-        "groups": [
+        "product": "Developers",
+        "name": "Developers",
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get started",
+                "icon": "rocket",
+                "pages": [
+                  "index",
+                  "tutorials/quickstart/from-cursor",
+                  "tutorials/quickstart/from-claude",
+                  "tutorials/quickstart/from-terminal",
+                  "tutorials/publish-your-first-custom-pipeline"
+                ]
+              },
+              {
+                "group": "Real-time video",
+                "icon": "video",
+                "pages": [
+                  "guides/real-time-video/stream-from-webcam",
+                  "guides/real-time-video/apply-a-real-time-effect",
+                  "guides/real-time-video/configure-rtmp-whip-ingest",
+                  "guides/real-time-video/reduce-latency"
+                ]
+              },
+              {
+                "group": "Other workloads",
+                "icon": "workflow",
+                "pages": [
+                  "guides/other-workloads/transcode-a-vod",
+                  "guides/other-workloads/generate-an-image",
+                  "guides/other-workloads/transcribe-audio",
+                  "guides/other-workloads/use-a-specific-model",
+                  "guides/other-workloads/choose-a-model-for-latency",
+                  "guides/other-workloads/estimate-pricing"
+                ]
+              },
+              {
+                "group": "Custom pipelines",
+                "icon": "package",
+                "pages": [
+                  "guides/custom-pipelines/package",
+                  "guides/custom-pipelines/publish",
+                  "guides/custom-pipelines/test-locally",
+                  "guides/custom-pipelines/debug-heartbeats",
+                  "guides/custom-pipelines/handle-long-running-jobs",
+                  "guides/custom-pipelines/register-a-capability"
+                ]
+              },
+              {
+                "group": "Operate",
+                "icon": "wrench",
+                "pages": [
+                  "guides/operate/handle-rate-limits",
+                  "guides/operate/retry-on-cold-start",
+                  "guides/operate/diagnose-timeouts",
+                  "guides/operate/monitor-usage"
+                ]
+              },
+              {
+                "group": "Concepts",
+                "icon": "book-open",
+                "pages": [
+                  "concepts/the-network",
+                  "concepts/pipelines",
+                  "concepts/runs",
+                  "concepts/models",
+                  "concepts/capabilities",
+                  "concepts/custom-pipelines",
+                  "concepts/pricing",
+                  "concepts/free-tier",
+                  "concepts/payment-providers",
+                  "concepts/latency-and-regions"
+                ]
+              }
             ]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+            "tab": "Reference",
+            "groups": [
+              {
+                "group": "Pipelines",
+                "icon": "workflow",
+                "pages": [
+                  "reference/pipelines/overview",
+                  "reference/pipelines/model-coverage",
+                  {
+                    "group": "Live transcoding",
+                    "pages": [
+                      "reference/pipelines/live-transcoding/transcoding"
+                    ]
+                  },
+                  {
+                    "group": "Video generation",
+                    "pages": [
+                      "reference/pipelines/video-generation/daydream-video-api"
+                    ]
+                  },
+                  {
+                    "group": "Video editing",
+                    "pages": [
+                      "reference/pipelines/video-editing/liveportrait"
+                    ]
+                  },
+                  {
+                    "group": "Image generation",
+                    "pages": [
+                      "reference/pipelines/image-generation/flux-schnell"
+                    ]
+                  },
+                  {
+                    "group": "Speech",
+                    "pages": [
+                      "reference/pipelines/speech/whisper-v3-large"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Runner SDK",
+                "icon": "code",
+                "pages": [
+                  "reference/runner-sdk/pipeline-base",
+                  "reference/runner-sdk/live-pipeline-base",
+                  "reference/runner-sdk/lifecycle-and-hooks",
+                  "reference/runner-sdk/side-channels",
+                  "reference/runner-sdk/heartbeat"
+                ]
+              },
+              {
+                "group": "API",
+                "icon": "file-json-2",
+                "pages": [
+                  "reference/api/authentication",
+                  "reference/api/runs",
+                  "reference/api/errors"
+                ]
+              },
+              {
+                "group": "SDKs",
+                "icon": "boxes",
+                "pages": [
+                  "reference/sdks/node",
+                  "reference/sdks/python",
+                  "reference/sdks/openapi"
+                ]
+              },
+              {
+                "group": "MCP",
+                "icon": "plug",
+                "pages": [
+                  "reference/mcp/cursor",
+                  "reference/mcp/claude-code",
+                  "reference/mcp/custom-clients"
+                ]
+              },
+              {
+                "group": "Capabilities and routing",
+                "icon": "route",
+                "pages": [
+                  "reference/capabilities-and-routing/what-is-a-capability",
+                  "reference/capabilities-and-routing/capability-metadata",
+                  "reference/capabilities-and-routing/builtin-vs-custom",
+                  "reference/capabilities-and-routing/discovery",
+                  "reference/capabilities-and-routing/filtering-advertisements"
+                ]
+              }
             ]
           },
           {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "Agent ready",
-            "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Changelog",
+                "icon": "rss",
+                "pages": ["changelog/index"]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "product": "Network",
+        "name": "Network",
+        "tabs": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "Documentation",
+            "groups": [
+              {
+                "group": "Get started",
+                "icon": "rocket",
+                "pages": [
+                  "network/index",
+                  "network/tutorials/spin-up-orchestrator",
+                  "network/tutorials/spin-up-gateway",
+                  "network/tutorials/stake-your-first-lpt",
+                  "network/tutorials/vote-on-your-first-lip"
+                ]
+              },
+              {
+                "group": "Operate",
+                "icon": "wrench",
+                "pages": [
+                  "network/guides/operate/multi-region-fleet",
+                  "network/guides/operate/advertise-a-custom-capability",
+                  "network/guides/operate/pull-and-run-custom-pipeline-container",
+                  "network/guides/operate/tune-routing",
+                  "network/guides/operate/reconcile-payment-tickets",
+                  "network/guides/operate/migrate-version",
+                  "network/guides/operate/recover-missed-reward-round",
+                  "network/guides/operate/monitoring-and-alerts"
+                ]
+              },
+              {
+                "group": "Stake",
+                "icon": "coins",
+                "pages": [
+                  "network/guides/stake/choose-an-orchestrator",
+                  "network/guides/stake/compound-rewards",
+                  "network/guides/stake/unbond-safely"
+                ]
+              },
+              {
+                "group": "Govern",
+                "icon": "landmark",
+                "pages": [
+                  "network/guides/govern/draft-a-lip",
+                  "network/guides/govern/treasury-vote"
+                ]
+              },
+              {
+                "group": "Concepts",
+                "icon": "book-open",
+                "pages": [
+                  "network/concepts/how-the-network-works",
+                  "network/concepts/rounds-and-rewards",
+                  "network/concepts/probabilistic-micropayments",
+                  "network/concepts/bonding-and-staking",
+                  "network/concepts/gateway-routing-semantics",
+                  "network/concepts/custom-pipelines-and-capabilities",
+                  "network/concepts/economics",
+                  "network/concepts/governance-philosophy"
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "Reference",
+            "groups": [
+              {
+                "group": "Capabilities",
+                "icon": "route",
+                "pages": [
+                  "network/reference/capabilities/capability-schema",
+                  "network/reference/capabilities/pricing-and-hardware-tags",
+                  "network/reference/capabilities/model-availability",
+                  "network/reference/capabilities/builtin-capabilities"
+                ]
+              },
+              {
+                "group": "Protocol",
+                "icon": "file-code",
+                "pages": [
+                  "network/reference/protocol/smart-contracts",
+                  "network/reference/protocol/round-mechanics",
+                  "network/reference/protocol/ticket-mechanics"
+                ]
+              },
+              {
+                "group": "Software",
+                "icon": "settings",
+                "pages": [
+                  "network/reference/software/orchestrator-config",
+                  "network/reference/software/gateway-config",
+                  "network/reference/software/cli"
+                ]
+              },
+              {
+                "group": "LIPs",
+                "icon": "scroll",
+                "pages": ["network/reference/lips/index"]
+              }
+            ]
+          },
+          {
+            "tab": "Changelog",
+            "groups": [
+              {
+                "group": "Changelog",
+                "icon": "rss",
+                "pages": ["network/changelog/index"]
+              }
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    ]
   }
 }

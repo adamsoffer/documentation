@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <defs>
+    <pattern id="cp-dots" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="9" r="0.6" fill="#1a3a2a"/>
+    </pattern>
+    <radialGradient id="cp-bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0e1d15"/>
+      <stop offset="100%" stop-color="#070d0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#cp-bg)"/>
+  <rect width="400" height="240" fill="url(#cp-dots)"/>
+  <g stroke="#40BF86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 200 50 L 254 78 L 200 106 L 146 78 Z" fill="#40BF86" fill-opacity="0.18"/>
+    <path d="M 146 78 L 200 106 L 200 168 L 146 140 Z" fill="#40BF86" fill-opacity="0.10"/>
+    <path d="M 254 78 L 200 106 L 200 168 L 254 140 Z" fill="#40BF86" fill-opacity="0.05"/>
+  </g>
+  <g stroke="#40BF86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 100 130 L 124 142 L 100 154 L 76 142 Z" fill="#40BF86" fill-opacity="0.18"/>
+    <path d="M 76 142 L 100 154 L 100 182 L 76 170 Z" fill="#40BF86" fill-opacity="0.10"/>
+    <path d="M 124 142 L 100 154 L 100 182 L 124 170 Z" fill="#40BF86" fill-opacity="0.05"/>
+  </g>
+  <g stroke="#40BF86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 300 130 L 324 142 L 300 154 L 276 142 Z" fill="#40BF86" fill-opacity="0.18"/>
+    <path d="M 276 142 L 300 154 L 300 182 L 276 170 Z" fill="#40BF86" fill-opacity="0.10"/>
+    <path d="M 324 142 L 300 154 L 300 182 L 324 170 Z" fill="#40BF86" fill-opacity="0.05"/>
+  </g>
+  <g stroke="#40BF86" stroke-width="1.6" stroke-linecap="round" stroke-dasharray="3 4" stroke-opacity="0.65">
+    <line x1="124" y1="148" x2="146" y2="120"/>
+    <line x1="254" y1="120" x2="276" y2="148"/>
+  </g>
+</svg>

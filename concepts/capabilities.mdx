@@ -1,0 +1,20 @@
+{/* Canonical definition for "capability" on the Developers side. First mention from anywhere on this surface should link here. */}
+---
+title: "Capabilities"
+description: "What a capability is and when developers need to know — the network-layer routing concept that sits above pipelines."
+---
+
+<Note>
+  This page is a placeholder. It is the canonical Developers-side definition of "capability" — the network-registered, discoverable advertisement of a pipeline plus its routing metadata. Most developers calling a pipeline do not need this concept; it matters for gateway authors, BYOC publishers, and anyone reading orchestrator advertisements.
+</Note>
+
+## On the Network side
+
+<CardGroup cols={2}>
+  <Card title="Custom pipelines and capability advertisement" href="/network/concepts/custom-pipelines-and-capabilities">
+    The operator-facing view: how orchestrators advertise capabilities and how gateways discover them.
+  </Card>
+  <Card title="Capability schema" href="/network/reference/capabilities/capability-schema">
+    The exact metadata structure orchestrators publish.
+  </Card>
+</CardGroup>

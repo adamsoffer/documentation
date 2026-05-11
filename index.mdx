@@ -1,133 +1,68 @@
 ---
 title: "Introduction"
-description: "Welcome to the new home for your documentation"
-icon: 'star'
+description: "Real-time AI video on the open Livepeer Network — plus image, speech, and language inference. Run remote inference in a few lines, or publish your own pipeline."
 ---
 
-## Setting up
+Real-time AI video on the open Livepeer Network. Run remote inference in a few lines — or publish your own pipeline.
 
-Get your documentation site up and running in minutes.
+<Tabs>
+  <Tab title="Python">
+    ```python
+    from livepeer import Livepeer
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+    client = Livepeer(api_key="lp_...")
+    stream = client.streams.start(
+        model="daydream/video",
+        prompt="cinematic",
+    )
+    print(stream.playback_url)
+    ```
+  </Tab>
+  <Tab title="Node">
+    ```javascript
+    import { Livepeer } from "@livepeer/sdk";
 
-## Make it yours
+    const client = new Livepeer({ apiKey: "lp_..." });
+    const stream = await client.streams.start({
+      model: "daydream/video",
+      prompt: "cinematic",
+    });
+    console.log(stream.playbackUrl);
+    ```
+  </Tab>
+  <Tab title="cURL">
+    ```bash
+    curl -X POST https://api.livepeer.org/v1/stream/start \
+      -H "Authorization: Bearer $LIVEPEER_API_KEY" \
+      -H "Content-Type: application/json" \
+      -d '{"model":"daydream/video","prompt":"cinematic"}'
+    ```
+  </Tab>
+</Tabs>
 
-Design a docs site that looks great and empowers your users.
+<Note>
+  Code samples mirror the dashboard's example API shape (POST `/v1/stream/start` with `model` + `prompt`). Final SDK reference will land in the content pass.
+</Note>
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
+## Where to next
+
+<CardGroup cols={2}>
+  <Card title="Get started" href="/tutorials/quickstart/from-cursor" img="/images/cards/quickstart.svg">
+    Make your first call from Cursor, Claude, or the terminal in under five minutes.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
+  <Card title="Concepts" href="/concepts/the-network" img="/images/cards/learn.svg">
+    The vocabulary you need: what the network is, what a pipeline is, how pricing works.
   </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
+  <Card title="Pipelines" href="/reference/pipelines/overview" img="/images/cards/pipelines.svg">
+    Browse the pipeline catalog — what each one does, latency, price, code samples.
   </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
+  <Card title="Custom pipelines" href="/tutorials/publish-your-first-custom-pipeline" img="/images/cards/custom-pipelines.svg">
+    Author and publish your own pipeline for GPU providers on the Livepeer Network to run.
   </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+  <Card title="MCP" href="/reference/mcp/cursor" img="/images/cards/mcp.svg">
+    Use Livepeer from Cursor, Claude Code, and other MCP-compatible clients.
   </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
+  <Card title="Guides" href="/guides/real-time-video/stream-from-webcam" img="/images/cards/guides.svg">
+    Task-oriented recipes for common workflows — real-time video first.
   </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Make your content agent ready
-
-Make your docs work for humans and AI agents alike.
-
-<Columns cols={2}>
-  <Card
-    title="Prompt component"
-    icon="robot"
-    href="/agent-ready/prompt"
-  >
-    Embed shareable AI prompts readers can copy or open in Cursor.
-  </Card>
-  <Card
-    title="Visibility"
-    icon="eye"
-    href="/agent-ready/visibility"
-  >
-    Show different content to humans and agents reading your docs.
-  </Card>
-  <Card
-    title="Contextual menu"
-    icon="bolt"
-    href="/agent-ready/contextual"
-  >
-    Give readers one-click access to Claude, ChatGPT, Cursor, and more.
-  </Card>
-  <Card
-    title="AI coding tools"
-    icon="wand-magic-sparkles"
-    href="/ai-tools/claude-code"
-  >
-    Set up Claude Code, Cursor, or Windsurf with Mintlify's skill.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+</CardGroup>

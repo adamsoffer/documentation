@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240">
+  <defs>
+    <pattern id="ln-dots" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="9" cy="9" r="0.6" fill="#1a3a2a"/>
+    </pattern>
+    <radialGradient id="ln-bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0e1d15"/>
+      <stop offset="100%" stop-color="#070d0a"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#ln-bg)"/>
+  <rect width="400" height="240" fill="url(#ln-dots)"/>
+  <g stroke="#40BF86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#40BF86" fill-opacity="0.08">
+    <rect x="120" y="55" width="180" height="48" rx="5"/>
+    <rect x="105" y="95" width="180" height="48" rx="5"/>
+    <rect x="90" y="135" width="180" height="48" rx="5"/>
+  </g>
+  <g stroke="#40BF86" stroke-width="2" stroke-linecap="round" fill="none">
+    <line x1="138" y1="74" x2="200" y2="74"/>
+    <line x1="123" y1="114" x2="200" y2="114"/>
+    <line x1="108" y1="154" x2="200" y2="154"/>
+    <line x1="138" y1="86" x2="180" y2="86" stroke-opacity="0.55" stroke-width="1.4"/>
+    <line x1="123" y1="126" x2="170" y2="126" stroke-opacity="0.55" stroke-width="1.4"/>
+    <line x1="108" y1="166" x2="160" y2="166" stroke-opacity="0.55" stroke-width="1.4"/>
+  </g>
+</svg>
