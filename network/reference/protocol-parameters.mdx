@@ -1,0 +1,59 @@
+---
+title: "Protocol parameters"
+description: "Governance-controlled values that shape orchestrator and delegator behavior — and how to verify the live values on-chain."
+---
+
+These values are **governance-controlled**. They can change without a docs release if governance
+updates them on-chain. The values below were re-checked against on-chain state / public Livepeer
+governance sources on **6 April 2026** — always verify the current values before relying on them.
+
+## Values that matter to delegators
+
+| Parameter | Value | Source | Why it matters |
+| --- | --- | --- | --- |
+| Unbonding period | `7` rounds | `BondingManager.unbondingPeriod()` | Full exit is delayed this long after you unbond |
+| Treasury reward cut | `10%` | `BondingManager.treasuryRewardCutRate()` (LIP-92) | Reduces round issuance shared by orchestrators + delegators |
+| Target bonding rate | `50%` | `Minter.targetBondingRate()` | Inflation adjusts around this target |
+| Inflation adjustment step | `500` | `Minter.inflationChange()` | How fast inflation moves toward the target |
+| Current inflation rate | variable | `Minter.inflation()` | Use live state, not a stale number |
+
+## Governance thresholds
+
+| Parameter | Value | Source |
+| --- | --- | --- |
+| Proposal threshold | `100 LPT` bonded | `LivepeerGovernor.proposalThreshold()` |
+| Quorum | `33.33%` of voting power | `LivepeerGovernor.quorumNumerator()` / `quorumDenominator()` |
+| Voting delay | `1` round | `LivepeerGovernor.votingDelay()` |
+| Voting period | `10` rounds | `LivepeerGovernor.votingPeriod()` |
+| Timelock minimum delay | `0` | `Treasury.getMinDelay()` |
+
+## Active set
+
+Livepeer's public product surfaces describe the active set as **100 orchestrators**. The size is
+governance-controlled — for operational automation, read `numActiveTranscoders()` directly rather
+than assuming 100.
+
+## Rounds
+
+A round is the protocol's accounting unit — roughly a day, but the exact cadence depends on chain
+timing. Use the [Explorer](https://explorer.livepeer.org) for the current round and countdown.
+
+## Verify these yourself
+
+Read the live contracts on Arbitrum One:
+
+- [BondingManager on Arbiscan](https://arbiscan.io/address/0x35bcf3c30594191d53231e4ff333e8a770453e40)
+- [Minter on Arbiscan](https://arbiscan.io/address/0xc20de37170b45774e6cd3d2304017fc962f27252)
+- [LivepeerGovernor on Arbiscan](https://arbiscan.io/address/0xcfe4e2879b786c3aa075813f0e364bb5accb6aa0)
+- [Treasury on Arbiscan](https://arbiscan.io/address/0xf82c1ff415f1fcf582554fdba790e27019c8e8c4)
+
+## Related
+
+<CardGroup cols={2}>
+  <Card title="Contract addresses" icon="file-contract" href="/network/reference/contracts">
+    Canonical addresses for the contracts named above.
+  </Card>
+  <Card title="Economics" icon="coins" href="/network/explanation/economics">
+    How these values translate into returns.
+  </Card>
+</CardGroup>
