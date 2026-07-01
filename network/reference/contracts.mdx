@@ -14,18 +14,27 @@ governance upgrades, while the target changes when a new implementation is deplo
   contract.
 </Warning>
 
-## Contracts you'll actually touch
+## Deployed addresses (Arbitrum One)
 
-| Contract | Used by | For |
+Resolved from the on-chain **Controller** (`getContract(keccak256(name))`) — **last verified
+1 July 2026**. These are the stable proxy addresses.
+
+| Contract | Address | Used by / for |
 | --- | --- | --- |
-| `BondingManager` | Orchestrators, delegators | Stake, bond/unbond, reward & fee cuts, reward distribution |
-| `TicketBroker` | Orchestrators | Redeem winning payment tickets for ETH |
-| `RoundsManager` | Orchestrators | Round progression; gates the reward call |
-| `ServiceRegistry` | Orchestrators | Store the service URI for gateway discovery |
-| `AIServiceRegistry` | Orchestrators (AI) | Register AI capabilities on the AI subnet |
-| `Minter` | (protocol) | Inflation issuance |
-| `LivepeerGovernor` / `Treasury` / `BondingVotes` | Delegators | Governance proposals, voting, treasury |
-| `L1Escrow` / `L2LPTGateway` | Delegators | Canonical LPT bridge between Ethereum and Arbitrum |
+| `Controller` | [`0xD8E8328501E9645d16Cf49539efC04f734606ee4`](https://arbiscan.io/address/0xD8E8328501E9645d16Cf49539efC04f734606ee4) | Registry that resolves every address below |
+| `BondingManager` | [`0x35Bcf3c30594191d53231E4FF333E8A770453e40`](https://arbiscan.io/address/0x35bcf3c30594191d53231e4ff333e8a770453e40) | Stake, bond/unbond, reward & fee cuts |
+| `TicketBroker` | [`0xa8bB618B1520E284046F3dFc448851A1Ff26e41B`](https://arbiscan.io/address/0xa8bb618b1520e284046f3dfc448851a1ff26e41b) | Redeem winning payment tickets for ETH |
+| `RoundsManager` | [`0xdd6f56DcC28D3F5f27084381fE8Df634985cc39f`](https://arbiscan.io/address/0xdd6f56dcc28d3f5f27084381fe8df634985cc39f) | Round progression; gates the reward call |
+| `Minter` | [`0xc20DE37170B45774e6CD3d2304017fc962f27252`](https://arbiscan.io/address/0xc20de37170b45774e6cd3d2304017fc962f27252) | Inflation issuance |
+| `ServiceRegistry` | [`0xC92d3A360b8f9e083bA64DE15d95Cf8180897431`](https://arbiscan.io/address/0xc92d3a360b8f9e083ba64de15d95cf8180897431) | Orchestrator service URI for discovery |
+| `LivepeerToken` (L2) | [`0x289ba1701C2F088cf0faf8B3705246331cB8A839`](https://arbiscan.io/address/0x289ba1701c2f088cf0faf8b3705246331cb8a839) | The LPT ERC-20 on Arbitrum |
+| `LivepeerGovernor` | [`0xcFE4E2879B786C3aa075813F0E364bb5acCb6aa0`](https://arbiscan.io/address/0xcfe4e2879b786c3aa075813f0e364bb5accb6aa0) | Proposals and voting (protocol + treasury) |
+| `Treasury` | [`0xf82C1FF415F1fCf582554fDba790E27019c8E8C4`](https://arbiscan.io/address/0xf82c1ff415f1fcf582554fdba790e27019c8e8c4) | Governance-controlled community funds |
+| `BondingVotes` | [`0x0B9C254837E72Ebe9Fe04960C43B69782E68169A`](https://arbiscan.io/address/0x0b9c254837e72ebe9fe04960c43b69782e68169a) | Stake snapshots for voting power |
+
+Not registered in the Controller (verify via [Arbiscan labels](https://arbiscan.io/accounts/label/livepeer)
+or the [protocol repo](https://github.com/livepeer/protocol)): the **AIServiceRegistry** (AI subnet
+registration) and the **LPT bridge** contracts (`L1Escrow` on Ethereum, `L2LPTGateway` on Arbitrum).
 
 ## Verify against the on-chain Controller
 

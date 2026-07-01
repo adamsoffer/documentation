@@ -71,6 +71,12 @@ In `livepeer_cli`, select **"Invoke multi-step 'become an orchestrator'"** and s
 | Fee Cut | `95` | % of ETH fees you keep (95% → delegators get 5%) |
 | Service address | `YOUR_PUBLIC_IP:8935` | Must match `-serviceAddr` exactly |
 
+<Warning>
+  **The Explorer displays Fee Cut inverted, as "Fee Share."** Set Fee Cut `95` here and your profile
+  will show **Fee Share 5%** — the portion passed to delegators. That's the same setting, not a
+  misconfiguration. (Reward Cut displays as-is.)
+</Warning>
+
 <Note>
   Your node joins the active set at the **start of the next round** (~22h), and only if your total
   stake is in the top 100. The Explorer may show **Registered** until then.

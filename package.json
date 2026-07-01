@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "mint dev",
     "build": "mint build",
-    "check-links": "mint broken-links"
+    "check-links": "mint broken-links",
+    "check": "node scripts/check-docs.mjs"
   },
   "devDependencies": {
     "mint": "latest"

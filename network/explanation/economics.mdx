@@ -71,7 +71,7 @@ directions, which is a common source of confusion — see the table below.
 
 Suppose in one round:
 
-- **900 LPT** of issuance is available to delegators and orchestrators (after the treasury's cut),
+- **900 LPT** of issuance is available to delegators and orchestrators (after any treasury cut),
 - your orchestrator controls **5%** of total bonded stake → its pool gets **45 LPT**,
 - its `rewardCut` is **10%** → delegators share **40.5 LPT**,
 - you hold **10%** of that pool's stake.
@@ -82,11 +82,11 @@ stake.
 
 ## Why inflation matters even if you don't operate
 
-The protocol targets a bonding rate (historically ~50% of LPT bonded) and **adjusts inflation to
-steer toward it**: under-bonded → inflation rises to attract stake; over-bonded → inflation falls to
-reduce dilution. A portion of issuance is also routed to a community **treasury** (currently a 10%
-reward cut under LIP-92). The practical takeaway for both roles: the mint rate is **not static** —
-check live state rather than an old annualized figure.
+The protocol targets a bonding rate (~50% of LPT bonded) and **adjusts inflation to steer toward
+it**: under-bonded → inflation rises to attract stake; over-bonded → inflation falls to reduce
+dilution. Issuance can also carry a **treasury cut** (LIP-92 set 10%, currently paused at its balance
+ceiling). The practical takeaway for both roles: the mint rate is **not static** — check the
+[live values](/network/reference/protocol-parameters) rather than an old annualized figure.
 
 ## An orchestrator's costs
 
@@ -108,5 +108,8 @@ automatic reward calling until stake grows (see [Configure](/network/guides/orch
   </Card>
   <Card title="Choose an orchestrator (delegator)" icon="list-check" href="/network/guides/delegator-choose-orchestrator">
     Use these settings to compare operators.
+  </Card>
+  <Card title="Governance & the treasury" icon="landmark" href="/network/explanation/governance">
+    Where the treasury cut goes — and the vote your stake carries.
   </Card>
 </CardGroup>

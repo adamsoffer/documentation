@@ -1,13 +1,17 @@
-# Livepeer Docs (Orchestrators & Delegators)
+# Livepeer Docs
 
-A focused, from-scratch [Mintlify](https://mintlify.com) documentation site covering **only** the two supply-side roles on the Livepeer network:
+The [Mintlify](https://mintlify.com) documentation site for the Livepeer network.
+
+The current **Network** section covers running the network:
 
 - **Orchestrators** — GPU operators who run `go-livepeer` and earn ETH fees + LPT rewards.
 - **Delegators** — LPT holders who bond their stake to an orchestrator and share in its rewards.
 
+A demand-side (developer) section is planned — the structure below is set up for it.
+
 ## URL structure — `/network`
 
-All supply-side docs live under the **`/network`** path (`docs.livepeer.org/network`). The `/network`
+Network docs live under the **`/network`** path (`docs.livepeer.org/network`). The `/network`
 prefix comes from the [`network/`](./network) folder structure, **not** from any navigation chrome —
 so the URLs are stable independent of how the sidebar/tabs are configured.
 
@@ -20,14 +24,14 @@ demand-side docs ship, the root and switcher are a config change, not a URL migr
 
 ```
 /                       → redirects to /network (temporary)
-/network/*              → supply side: orchestrators + delegators (this repo)
-/build/* (future)       → demand side: developers (not built yet)
+/network/*              → run the network: orchestrators + delegators
+/build/* (future)       → build on the network: developers
 ```
 
 ## How it's organized — Diátaxis
 
-Inside the Network tab, the sidebar follows the [Diátaxis](https://diataxis.fr) framework. Each
-section serves one need:
+Within each section, the sidebar follows the [Diátaxis](https://diataxis.fr) framework. Each group
+serves one need:
 
 | Section | Need it serves | Example |
 | --- | --- | --- |
@@ -53,10 +57,11 @@ npm run dev
 Every page is an `.mdx` file under [`network/`](./network). The sidebar, tabs, theme, and redirects
 live in [`docs.json`](./docs.json).
 
-## Source
+## Source & accuracy
 
-Content is rebuilt from first principles based on the official Livepeer v2 docs at
-<https://docs.livepeer.org>, deliberately reduced to the orchestrator and delegator paths.
-Network values (inflation, unbonding period, active-set size, contract addresses) are
-governance-controlled and change over time — always verify against the
-[Livepeer Explorer](https://explorer.livepeer.org) and on-chain state.
+Content is rebuilt from first principles based on the Livepeer v2 docs at
+<https://docs.livepeer.org>. Network values (inflation, unbonding period, active-set size,
+contract addresses) are governance-controlled and change over time — the Reference pages carry a
+"last verified" date from on-chain reads, and you can always re-verify against the
+[Livepeer Explorer](https://explorer.livepeer.org) and on-chain state. Run `npm run check` to
+validate navigation and internal links (also enforced in CI).

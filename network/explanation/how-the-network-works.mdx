@@ -66,6 +66,20 @@ automatically when you bond more, unbond, rebond, or redelegate.
   in the round**, after your orchestrator has already called `reward()`.
 </Warning>
 
+## Where demand comes from
+
+Everything above is the supply side. The work itself comes from **applications** — real-time AI
+video products, streaming platforms, and other services that need video transcoded or AI models run.
+Applications don't talk to orchestrators directly: they integrate with a **gateway**, which
+aggregates their jobs, selects orchestrators (by capability, price, latency, performance, and
+stake), and pays for the work in ETH. From an orchestrator's seat, gateways *are* the demand.
+
+<Note>
+  Want to be on that side of the marketplace — sending jobs instead of serving them? A developer
+  platform and a Build section of these docs are on the way; until then, ask in the
+  [Livepeer Discord](https://discord.gg/livepeer).
+</Note>
+
 ## The life of a job
 
 This is what happens when a gateway sends a single job to an orchestrator:

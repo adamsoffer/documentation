@@ -34,6 +34,24 @@ Set with `-pricePerUnit`, in **wei per pixel** — not ETH.
   logs. Remember: 1 ETH = 1,000,000,000,000,000,000 wei.
 </Warning>
 
+### Sanity-check the math
+
+You're paid per pixel of video you **encode** — so what a price means in ETH depends on the
+renditions a stream asks for. Work one example before you commit to a number. Say a gateway requests
+three output renditions at 30 fps:
+
+```
+pixels per second = (1280×720 + 854×480 + 640×360) × 30 ≈ 46.9M px/s
+pixels per hour   ≈ 46.9M × 3600 ≈ 1.69 × 10¹¹ px
+
+at -pricePerUnit 1000 (wei/pixel):
+1.69 × 10¹¹ px × 1,000 wei ≈ 1.69 × 10¹⁴ wei ≈ 0.00017 ETH per stream-hour
+```
+
+If your own calculation comes out at whole ETH per hour, your price is off by orders of magnitude —
+almost always the ETH-instead-of-wei mistake above. (Numbers are illustrative; actual pixel counts
+depend on the profiles each gateway requests, and `pixelsPerUnit` defaults to `1`.)
+
 ## AI capability price
 
 AI is priced **per pipeline and per model** in `aiModels.json` via the `price_per_unit` field (wei

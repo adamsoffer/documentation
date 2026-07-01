@@ -89,7 +89,7 @@ instead of paying for a new on-chain registration transaction.
 | --- | --- | --- |
 | **Combined** (most common) | `-orchestrator -transcoder` | One machine handles everything |
 | **Orchestrator-only** | `-orchestrator` | Remote transcoders connect via `-orchSecret` |
-| **Transcoder-only** | `-transcoder -orchAddr <host:port>` | Contributing a GPU to another orchestrator's pool |
+| **Transcoder-only** | `-transcoder -orchAddr <host:port>` | Running a GPU worker that reports to a separate orchestrator process |
 
 <Warning>
   In a split (O-T) setup, add `-reward=false` to **all transcoder** processes — only the orchestrator
